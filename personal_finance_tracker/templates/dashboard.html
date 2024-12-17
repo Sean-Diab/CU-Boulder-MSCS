@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personal Finance Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .summary {
+            margin-bottom: 20px;
+        }
+        .summary-item {
+            margin-bottom: 5px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personal Finance Dashboard</h1>
+    <div class="summary">
+        <div class="summary-item"><strong>Total Income:</strong> ${{ total_income }}</div>
+        <div class="summary-item"><strong>Total Expenses:</strong> ${{ total_expenses }}</div>
+        <div class="summary-item"><strong>Total Savings:</strong> ${{ total_savings }}</div>
+    </div>
+
+    <h2>Expenses by Category</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Amount (USD)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for category, amount in expense_details %}
+            <tr>
+                <td>{{ category }}</td>
+                <td>{{ amount }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Monthly Spending Chart</h2>
+    <img src="{{ chart_url }}" alt="Monthly Spending Chart">
+</body>
+</html>
