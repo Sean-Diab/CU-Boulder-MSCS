@@ -1,0 +1,1 @@
+Run it by opening a command prompt in this location and doing python app.py
